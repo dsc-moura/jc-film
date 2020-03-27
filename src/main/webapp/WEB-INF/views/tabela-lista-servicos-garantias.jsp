@@ -43,9 +43,12 @@
 		 			<td><fmt:formatNumber value="${venda.total}" type="currency" minFractionDigits="2"/></td>
 		 			<td>
 		 				<button type="button" class="btn btn-primary" id="btn-visualizar-servico" onclick="VisualizarServico('${venda.id}');" data-toggle="modal" data-target="#lista-itens-produtos-servicos"><i class="fas fa-clipboard-list"></i></button>
-		 				<button type="button" class="btn btn-secondary" id="btn-imprimir-garantia" data-toggle="modal" data-target="#modal-garantia-cliente"><i class="fas fa-print"></i></button>							
-		 			</td>
-		 				
+		 				<c:choose>
+							<c:when test="${venda.situacao}">
+								<button type="button" class="btn btn-secondary" id="btn-imprimir-garantia" data-toggle="modal" data-target="#modal-garantia-cliente"><i class="fas fa-print"></i></button>							
+							</c:when>
+						</c:choose>			 			 				
+		 			</td>		 				
 		 		</tr>
 		 	</c:forEach>
 		 </tbody>
