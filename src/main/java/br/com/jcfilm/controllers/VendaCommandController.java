@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import br.com.jcfilm.interfaces.IVendaCommnadService;
 import br.com.jcfilm.models.ItemVenda;
 import br.com.jcfilm.models.Venda;
-import br.com.jcfilm.services.ImprimirService;
 
 @Controller
 @EnableTransactionManagement
@@ -24,8 +23,7 @@ public class VendaCommandController {
 	
 	@Autowired
 	private IVendaCommnadService IVenda;
-	
-	private ImprimirService IService;
+
 	
 	@RequestMapping("/iniciar-processo-venda")
 	@ResponseBody
@@ -77,13 +75,6 @@ public class VendaCommandController {
 	@ResponseStatus(HttpStatus.OK)
 	public void UpdateQuatidadeItens(@PathVariable("id") int id, @PathVariable("quantidade") int quantidade) {
 		IVenda.UpdateQuantidade(id, quantidade);
-	}
-	
-	@PutMapping(value="imprimir-relario/{arquivo}")
-	@ResponseStatus(HttpStatus.OK)
-	public void ImprimirRelatorio(@PathVariable("arquivo") String arquivo) {
-		IService = new ImprimirService();
-		
-		IService.ImpressaoDeRelatorio("Venda");
-	}
+	}	
+
 }
