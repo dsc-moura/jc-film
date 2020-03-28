@@ -322,8 +322,7 @@
 	      	<div class="botao">
 	      	     		
      			<button type="button" class="btn btn-outline-danger btn-circle btn-xl" data-toggle="tooltip" data-placement="bottom" onclick="CancelarVenda();" title="CANCELAR">
-					<i class="far fa-sad-tear fa-blink"></i>
-					
+					<i class="fas fa-times fa-blink"></i>					
 				</button>
 	     
 	      	</div>	     	 	
@@ -482,7 +481,7 @@
 							   		<div class="card-body">
 							   			<div class="row">					   				
 							   			   <div class="col-md-2">
-										   		<label>OS Nº:</label>
+										   		<label>O.S Nº:</label>
 										   		<input type="text" class="form-control" id="g-os-id-servico" readonly="true" >
 										   </div>
 							   				<div class="col-md-10">							  			

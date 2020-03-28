@@ -73,7 +73,7 @@ public class VendaQueryDAOImpl implements IVendaQueryService{
 	public List<Venda> Vendas() {
 		// TODO Auto-generated method stub
 		try {
-			Query query = manager.createQuery("from Venda");
+			Query query = manager.createQuery("from Venda order by id desc");
 			List<Venda> vendas = query.getResultList();
 			return vendas;	
 		}finally{
