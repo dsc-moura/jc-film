@@ -23,9 +23,9 @@
 		 	<c:forEach items="${vendas}" var="venda">
 		 		<tr class="lista-garantias" id="venda-${venda.id}">
 		 			<td id="codigo-id-venda" style="display: none;">${venda.id}</td>
-		 			<td><fmt:formatDate pattern="dd/MM/yyyy" value="${venda.data.time}"/></td>	
-		 			<td>${venda.prazo} ${venda.descPrazo}</td>
-		 			<td><fmt:formatDate pattern="dd/MM/yyyy" value="${venda.vencimento.time}"/></td>		 			
+		 			<td id="dt-venda-${venda.id}"><fmt:formatDate pattern="dd/MM/yyyy" value="${venda.data.time}"/></td>	
+		 			<td >${venda.prazo} ${venda.descPrazo}</td>
+		 			<td id="dt-venc-garantia-${venda.id}"><fmt:formatDate pattern="dd/MM/yyyy" value="${venda.vencimento.time}"/></td>		 			
 		 			<td>
 		 				<c:choose>
 							<c:when test="${venda.situacao}">
@@ -36,16 +36,16 @@
 							</c:otherwise>
 						</c:choose>			 			
 		 			</td>
-		 			<td>${venda.usuario.nome}</td>
-		 			<td>${venda.cliente.nome} ${venda.cliente.sobrenome}</td>
-		 			<td>${venda.veiculo.veiculo.nome}</td>
+		 			<td id="nm-responsavel-${venda.id}">${venda.usuario.nome}</td>
+		 			<td id="nm-cliente-${venda.id}">${venda.cliente.nome} ${venda.cliente.sobrenome}</td>
+		 			<td id="nm-veiculo-${venda.id}">${venda.veiculo.veiculo.nome}</td>
 		 			<td id="nm-placa-veiculo">${venda.veiculo.placa}</td>
-		 			<td><fmt:formatNumber value="${venda.total}" type="currency" minFractionDigits="2"/></td>
+		 			<td id="vlr-total-${venda.id}"><fmt:formatNumber value="${venda.total}" type="currency" minFractionDigits="2"/></td>
 		 			<td>
 		 				<button type="button" class="btn btn-primary" id="btn-visualizar-servico" onclick="VisualizarServico('${venda.id}');" data-toggle="modal" data-target="#lista-itens-produtos-servicos"><i class="fas fa-clipboard-list"></i></button>
 		 				<c:choose>
 							<c:when test="${venda.situacao}">
-								<button type="button" class="btn btn-secondary" id="btn-imprimir-garantia" data-toggle="modal" data-target="#modal-garantia-cliente" onclick="BuscaDadosParaGarantia('${venda.id}');"><i class="fas fa-print"></i></button>							
+								<button type="button" class="btn btn-secondary" id="btn-imprimir-garantia" data-toggle="modal" data-target="#modal-garantia-cliente" onclick="BuscaDadosParaGarantia('${venda.id}','venda-${venda.id}');"><i class="fas fa-print"></i></button>							
 							</c:when>
 						</c:choose>			 			 				
 		 			</td>		 				

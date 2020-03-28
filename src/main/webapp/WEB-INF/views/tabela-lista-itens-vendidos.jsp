@@ -7,19 +7,19 @@
 	<table id="tabela-itens-vendas" class="table table-bordered">
 		 <thead class="corHeaderMarca">
 		    <tr>
-		      <th class="alinha-cor">Serviço/Produto</th>
-		      <th class="alinha-cor">Preço</th>	
-		      <th class="alinha-cor">Quantidade</th>							              
+		      <th class="alinha-cor">Serviço/Produto</th>		     
+		      <th class="alinha-cor">Quantidade</th>		
+		      <th class="alinha-cor">Valor Unit.</th>						              
 		    </tr>
 		 </thead>
 		 <tbody>
 		 	<c:forEach items="${itens}" var="item">
 		 		<tr id="item-${item.id}">
 		 			<td>${item.produto.nome}</td>
-		 			<td><fmt:formatNumber  type="currency" value="${item.produto.preco}" minFractionDigits="2"/></td>
 		 			<td >
 		 				${item.quantidade}
-		 			</td>			 			
+		 			</td>		
+		 			<td><fmt:formatNumber  type="currency" value="${item.produto.preco}" minFractionDigits="2"/></td>		 							
 		 		</tr>
 		 	</c:forEach>
 		 </tbody>

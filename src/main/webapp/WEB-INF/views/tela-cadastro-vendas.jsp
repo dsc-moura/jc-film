@@ -112,7 +112,7 @@
 						    	<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vendas & Orçamentos</a>
 						  </li>
 						   <li class="nav-item">
-						    	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#garantia" role="tab" aria-controls="profile" aria-selected="false">Garantias</a>
+						    	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#garantia" role="tab" aria-controls="profile" aria-selected="false">Consultas & Garantias</a>
 						  </li>
 					</ul>		
 				<br><br>
@@ -417,7 +417,7 @@
 								   			</div>
 										   <div class="col-md-4">
 										   		<label>CNPJ:</label>
-										   		<input type="input" class="form-control" value="96.658.398/0001-27" id="g-cnpj-empresa" readonly="true" >
+										   		<input type="input" class="form-control" value="93.638.398/0004-27" id="g-cnpj-empresa" readonly="true" >
 										   </div>
 										   <div class="col-md-3">
 										   		<label>Telefone:</label>
@@ -425,7 +425,7 @@
 										   </div>
 										    <div class="col-md-6">
 										   		<label>Endereço:</label>
-										   		<input type="input" class="form-control" value="Avenida Raimundo Pereira de Magalhães" id="g-endereco-empresa" readonly="true">
+										   		<input type="input" class="form-control" value="Av. Raimundo Pereira de Magalhães" id="g-endereco-empresa" readonly="true">
 										   </div>
 										   <div class="col-md-2">
 										   		<label>Nº:</label>
@@ -444,35 +444,35 @@
 							   			<div class="row">
 							   				<div class="col-md-12">							  			
 									   			<label>Cliente:</label>
-									   			<input type="text" class="form-control" value="Daniel Silva da Conceição Moura" id="g-nm-cliente" readonly="true">									   
+									   			<input type="text" class="form-control"  id="g-nm-cliente" readonly="true">									   
 								   			</div>
 										   <div class="col-md-3">
 										   		<label>CPF:</label>
-										   		<input type="input" class="form-control" value="388.562.218-10" id="g-cpf-cliente" readonly="true">
+										   		<input type="input" class="form-control"  id="g-cpf-cliente" readonly="true">
 										   </div>
 										   <div class="col-md-3">
 										   		<label>Telefone:</label>
-										   		<input type="input" class="form-control" value="(11) 98223-3822" id="g-telefone-cliente" readonly="true">
+										   		<input type="input" class="form-control"  id="g-telefone-cliente" readonly="true">
 										   </div>								   
 										   <div class="col-md-6">
 										   		<label>E-mail:</label>
-										   		<input type="input" class="form-control" value="dscm.moura@gmail.com" id="g-email-cliente" readonly="true">
+										   		<input type="input" class="form-control"  id="g-email-cliente" readonly="true">
 										   </div>
 										    <div class="col-md-3">
 										   		<label>Marca:</label>
-										   		<input type="input" class="form-control" value="Renault" id="g-marca-veiculo-cliente" readonly="true" >
+										   		<input type="input" class="form-control" id="g-marca-veiculo-cliente" readonly="true" >
 										   </div>
 										   <div class="col-md-4">
 										   		<label>Veículo:</label>
-										   		<input type="input" class="form-control" value="Sandero" id="g-nome-veiculo-cliente" readonly="true" >
+										   		<input type="input" class="form-control" id="g-nome-veiculo-cliente" readonly="true" >
 										   </div>
 										   <div class="col-md-3">
 										   		<label>Placa:</label>
-										   		<input type="input" class="form-control" value="FWG-1432" id="g-veiculo-placa-cliente" readonly="true" >
+										   		<input type="input" class="form-control" id="g-veiculo-placa-cliente" readonly="true" >
 										   </div>
 										   <div class="col-md-2">
 										   		<label>Ano:</label>
-										   		<input type="input" class="form-control" value="2015" id="g-ano-veiculo-cliente" readonly="true" >
+										   		<input type="input" class="form-control" id="g-ano-veiculo-cliente" readonly="true" >
 										   </div>										  
 							   			</div>
 							   		</div>						   
@@ -483,42 +483,31 @@
 							   			<div class="row">					   				
 							   			   <div class="col-md-2">
 										   		<label>OS Nº:</label>
-										   		<input type="input" class="form-control" value="1" id="g-os-id-servico" readonly="true" >
+										   		<input type="text" class="form-control" id="g-os-id-servico" readonly="true" >
 										   </div>
 							   				<div class="col-md-10">							  			
 									   			<label>Responsável:</label>
-									   			<input type="input" class="form-control" value="Daniel" id="g-nm-resp-servico" readonly="true" >									 
+									   			<input type="text" class="form-control" id="g-nm-resp-servico" readonly="true" >									 
 								   			</div>								 
 										   <div class="col-md-4">
 										   		<label>Data Serviço:</label>
-										   		<input type="input" class="form-control" value="23/01/2020" id="g-data-servico" readonly="true" >
+										   		<input type="text" class="form-control"  id="g-data-servico" readonly="true" >
 										   </div>								   
 										   <div class="col-md-4">
 										   		<label>Venc. Garantia:</label>
-										   		<input type="input" class="form-control" value="23/02/2020" id="g-data-garantia-servico" readonly="true" >
+										   		<input type="text" class="form-control" id="g-data-garantia-servico" readonly="true" >
 										   </div>
 										   <div class="col-md-4">
 										   		<label>Valor Total:</label>
-										   		<input type="input" class="form-control" value="R$ 350,00" id="g-total-servico" readonly="true" >
+										   		<input type="text" class="form-control" id="g-total-servico" readonly="true" >
 										   </div>
 										   
 										   <hr>										  
 							   			</div>
 							   			<br>	
-							   			<table id="tabela-servicos-garantias" class="table">
-											<thead>
-												<tr>
-													<th scope="col">Seriço/Produto</th>
-													<th scope="col">Quantidade</th>
-													<th scope="col">Valor Unit.</th>
-												</tr>
-											</thead>
-											<tbody id="tabela-g-servicos">
-												<tr>
-												
-												</tr>
-											</tbody>
-										</table>	
+							   			<div id="tabela-itens-para-garantia">
+							   				<jsp:include page="tabela-lista-itens-vendidos.jsp"></jsp:include>	
+							   			</div>
 							   		</div>						   
 							   </div>	
 				    		</div> 

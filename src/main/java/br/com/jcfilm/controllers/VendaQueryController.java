@@ -68,11 +68,7 @@ public class VendaQueryController {
 	@PutMapping(value="buscar-dados-vendas/{id}")
 	@ResponseBody
 	public List<Venda> PegarDadosVenda(@PathVariable("id") int id) {
-		//return IVenda.PegarDadosVenda(id);
-		
-		VService = new VendaService();
-		return VService.ListaVendas(IVenda.PegarDadosVenda(id),VService.EncontrarDatasVencimento(IVenda.PegarDadosVenda(id)),IVenda.ListaItensVendidos());
-		
+		return IVenda.PegarDadosVenda(id);
 	}
 	
 	public List<Venda> vendas(){

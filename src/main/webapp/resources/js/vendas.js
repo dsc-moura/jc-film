@@ -69,6 +69,7 @@ function FiltraListaGarantias() {
 	}
 }
 
+
 //FUNÇÃO RETIRA CARACTER ESPECIAL DO NOME QUE FOI DIGITADO NA CONSULTA E DO NOME NA TABELA
 function retira_acentos(nome) {
 	com_acento = "ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝŔÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿŕ";
@@ -300,12 +301,28 @@ function VisualizarServico(id){
 	    dataType: 'html',	    
 	    success: function(data){
 	    	$('#itens-garantia-cliente').html(data);
-	    
+	    	$('#tabela-itens-para-garantia').html(data);    
 	     }		    
 	}); 
 }
 
-function BuscaDadosParaGarantia(id){
+function BuscaDadosParaGarantia(id,vlrLinha){
+	
+	var garantia = $('.lista-garantias');
+	
+	$.each(garantia,function(i){
+		if(parseInt($('#'+garantia[i].id).find('#codigo-id-venda').text()) == id){
+			
+			$('#g-os-id-servico').val(id);
+			$('#g-data-servico').val($('#'+garantia[i].id).find('#dt-venda-'+id).text());
+			$('#g-data-garantia-servico').val($('#'+garantia[i].id).find('#dt-venc-garantia-'+id).text());
+			$('#g-nm-resp-servico').val($('#'+garantia[i].id).find('#nm-responsavel-'+id).text());
+			$('#g-total-servico').val($('#'+garantia[i].id).find('#vlr-total-'+id).text());			
+		}		
+	});
+	
+	VisualizarServico(id);
+	
 	if($.isNumeric(id)){
 		$.ajax({
 		    type:  'PUT',
@@ -326,6 +343,7 @@ function BuscaDadosParaGarantia(id){
 		     } 
 		});
 	}
+	
 }
 
 function PegarDados(){
