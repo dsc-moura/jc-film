@@ -45,7 +45,7 @@
 		 				<button type="button" class="btn btn-primary" id="btn-visualizar-servico" onclick="VisualizarServico('${venda.id}');" data-toggle="modal" data-target="#lista-itens-produtos-servicos"><i class="fas fa-clipboard-list"></i></button>
 		 				<c:choose>
 							<c:when test="${venda.situacao}">
-								<button type="button" class="btn btn-secondary" id="btn-imprimir-garantia" data-toggle="modal" data-target="#modal-garantia-cliente"><i class="fas fa-print"></i></button>							
+								<button type="button" class="btn btn-secondary" id="btn-imprimir-garantia" data-toggle="modal" data-target="#modal-garantia-cliente" onclick="BuscaDadosParaGarantia('${venda.id}');"><i class="fas fa-print"></i></button>							
 							</c:when>
 						</c:choose>			 			 				
 		 			</td>		 				

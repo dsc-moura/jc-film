@@ -120,7 +120,7 @@ function FinalizarVendaServico(){
 				    }, 300);
 		    		
 		    		if(venda.situacao){
-		    			$('#imprimir-garantia-cliente').show();
+		    			//$('#imprimir-garantia-cliente').show();
 		    			$('#finalizar-venda-btn,#btn-finalizar-venda').hide();
 		    		}
 		    		
@@ -303,6 +303,29 @@ function VisualizarServico(id){
 	    
 	     }		    
 	}); 
+}
+
+function BuscaDadosParaGarantia(id){
+	if($.isNumeric(id)){
+		$.ajax({
+		    type:  'PUT',
+		    url:   'buscar-dados-vendas/'+id,	   
+		    success: function(data){	    	
+		    	$.each(data, function(i) {	    	
+		    		console.log(data);
+		    		$('#g-nm-cliente').val(data[i].cliente.nome + " " + data[i].cliente.sobrenome);
+		    		$('#g-cpf-cliente').val(data[i].cliente.cpf);
+		    		$('#g-telefone-cliente').val(data[i].cliente.telefone);
+		    		$('#g-email-cliente').val(data[i].cliente.email);
+		    		$('#g-marca-veiculo-cliente').val(data[i].veiculo.veiculo.marca.nome);
+		    		$('#g-nome-veiculo-cliente').val(data[i].veiculo.veiculo.nome);
+		    		$('#g-veiculo-placa-cliente').val(data[i].veiculo.placa);
+		    		$('#g-ano-veiculo-cliente').val(data[i].veiculo.ano);
+		    		
+		    	});
+		     } 
+		});
+	}
 }
 
 function PegarDados(){

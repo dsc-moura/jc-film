@@ -57,6 +57,37 @@
 			 width: 98%;
 		}
 		
+		.redonda {
+			border-radius: 70%;
+			display: inline-block;
+			
+			width:100px;
+			height:100px;
+		}
+		
+		.btn-circle.btn-xl{
+			width: 120px;
+			height: 120px;
+			padding: 28px 30px;
+			font-size: 50px;
+			line-height: 1.33;
+			border-radius:100px;	
+		}
+		
+		@keyframes fa-blink {
+		     0% { opacity: 1; }
+		     50% { opacity: 1.8; }
+		     100% { opacity: 0.3; }
+		 }
+		 
+		.fa-blink {
+		   -webkit-animation: fa-blink .75s linear infinite;
+		   -moz-animation: fa-blink .75s linear infinite;
+		   -ms-animation: fa-blink .75s linear infinite;
+		   -o-animation: fa-blink .75s linear infinite;
+		   animation: fa-blink .75s linear infinite;
+		}
+		
 		.scrollTabelas{
 		 	max-height:250px;
 		  	overflow-x:auto;
@@ -78,10 +109,7 @@
 				<div class="container-fluid" id="formulario-clientes">
 					<ul class="nav nav-tabs" id="myTab" role="tablist">
 						  <li class="nav-item">
-						    	<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vendas</a>
-						  </li>
-						  <li class="nav-item">
-						    	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#orcamento" role="tab" aria-controls="profile" aria-selected="false">Orçamentos</a>
+						    	<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vendas & Orçamentos</a>
 						  </li>
 						   <li class="nav-item">
 						    	<a class="nav-link" id="profile-tab" data-toggle="tab" href="#garantia" role="tab" aria-controls="profile" aria-selected="false">Garantias</a>
@@ -162,12 +190,6 @@
 				  				</div>				  				
 				  		   </div>
 				  	    </div>	
-				  	</div>
-				  	<div class="tab-pane fade" id="orcamento" role="tabpanel" aria-labelledby="profile-tab">
-				  		
-				  		Tab para Orçamentos
-				  		
-				  		
 				  	</div>
 				  	<div class="tab-pane fade" id="garantia" role="tabpanel" aria-labelledby="profile-tab">
 				  		<div class="card">
@@ -298,7 +320,12 @@
 	      </div>
 	      <div class="modal-body">
 	      	<div class="botao">
-	      		<button type="button" class="btn btn-success btn-lg" onclick="CancelarVenda();"><i class="fas fa-check"></i> CONFIRMAR</button>	
+	      	     		
+     			<button type="button" class="btn btn-outline-danger btn-circle btn-xl" data-toggle="tooltip" data-placement="bottom" onclick="CancelarVenda();" title="CANCELAR">
+					<i class="far fa-sad-tear fa-blink"></i>
+					
+				</button>
+	     
 	      	</div>	     	 	
 	      </div>
 	      <div class="modal-footer">	      				
@@ -365,41 +392,7 @@
 	    </div>
 	  </div>
 	</div>
-	
-		<!-- MODAL IMPRIMIR GARANTA-->
-	<div class="modal fade" data-backdrop="static" id="imprimir-garantia-cliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-	  <div class="modal-dialog modal-lg" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h5 class="modal-title" id="exampleModalLongTitle">FINALIZAR VENDA</h5>
-	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-	   
-	        </button>
-	      </div>
-	      <div class="modal-body">
-	     	 	<div class="card">
-	  				<div class="card-body">
-		  				<div id="formulario-imprimir-garantia" class="row">		  					
-		  					<div class="card">
-						  				<div class="card-body">
-						  					<div class="col-md-6">
-						  						<h5>Nome Empresa:</h5>
-						  						<div class="input-group input-group-lg">
-													<input type="text" class="form-control" id="g-nm-empresa"/>
-												</div>
-						  					</div>
-						  				</div>
-						  			</div>										
-		  				</div>
-		  				<div style="display: none; text-align: right;">
-							<button type="button" class="btn btn-secondary btn-lg" id="btn-imprimir-garantia" ><i class="fas fa-print"></i> IMPRIMIR GARANTIA</button>	
-						</div>
-		  			</div>
-	  			</div>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+
 	
 	<!-- MODAL IMPRESSÃO GARANTIA DO CLIENTE -->
 	 <div class="modal fade" id="modal-garantia-cliente">
@@ -451,7 +444,7 @@
 							   			<div class="row">
 							   				<div class="col-md-12">							  			
 									   			<label>Cliente:</label>
-									   			<input type="input" class="form-control" value="Daniel Silva da Conceição Moura" id="g-nm-cliente" readonly="true">									   
+									   			<input type="text" class="form-control" value="Daniel Silva da Conceição Moura" id="g-nm-cliente" readonly="true">									   
 								   			</div>
 										   <div class="col-md-3">
 										   		<label>CPF:</label>
