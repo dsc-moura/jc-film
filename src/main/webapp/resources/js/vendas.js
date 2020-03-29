@@ -127,7 +127,7 @@ function FinalizarVendaServico(){
 		    			AtualizarPagina();
 		    		}
 		    		
-		    		$('#finalizar-venda').modal('hide');
+		    		//$('#finalizar-venda').modal('hide');
 		    		
 		    	},error:function(){
 		    		setTimeout(function() {	  		  	  		  		  
