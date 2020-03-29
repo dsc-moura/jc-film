@@ -122,10 +122,12 @@ function FinalizarVendaServico(){
 		    		
 		    		if(venda.situacao){
 		    			//$('#imprimir-garantia-cliente').show();
-		    			$('#finalizar-venda-btn,#btn-finalizar-venda').hide();
+		    			
+		    			//$('#finalizar-venda-btn,#btn-cancelcar-venda').hide();
+		    			AtualizarPagina();
 		    		}
 		    		
-		    		//$('#finalizar-venda').modal('hide');
+		    		$('#finalizar-venda').modal('hide');
 		    		
 		    	},error:function(){
 		    		setTimeout(function() {	  		  	  		  		  
@@ -635,8 +637,7 @@ function CancelarVenda(){
 		    url:   'cancelar-venda/'+id,
 		    statusCode:{
 		    	200:function(){	   	
-		    		
-		    	//	$('#cancelar-venda').modal('hide');
+		    
 		    		AtualizarPagina();
 		    		
 		    		setTimeout(function() {

@@ -18,8 +18,8 @@
 		 		<tr class="produtos-servicos-carrinho" id="item-${item.id}">
 		 			<td id="codigo-id-venda" style="display: none;">${item.venda.id}</td>
 		 			<td>${item.produto.nome}</td>
-		 			<td><fmt:formatNumber  type="currency" value="${item.produto.preco}" minFractionDigits="2"/>
-		 				<input type="text" class="form-control" value="${item.produto.preco}" id="valor-item" size="8" style="display: none;">
+		 			<td><fmt:formatNumber  type="currency" value="${item.valor}" minFractionDigits="2"/>
+		 				<input type="text" class="form-control" value="${item.valor}" id="valor-item" size="8" style="display: none;">
 		 			</td>
 		 			<td id="qtde-produto-servico">
 		 				<span id="qtd-produto-${item.id}">${item.quantidade}</span>
