@@ -1,5 +1,6 @@
 package br.com.jcfilm.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -20,8 +21,16 @@ public class ItemVenda {
 	@ManyToOne
 	@JoinColumn(name="id_venda",nullable=false)
 	private Venda venda;
-	private int quantidade;
+	private int quantidade;	
+	@Column(nullable=true)
+	private double valor;
 	
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
 	public int getId() {
 		return id;
 	}
@@ -48,6 +57,7 @@ public class ItemVenda {
 	}
 	@Override
 	public String toString() {
-		return "ItemVenda [id=" + id + ", produto=" + produto + ", venda=" + venda + ", quantidade=" + quantidade + "]";
+		return "ItemVenda [id=" + id + ", produto=" + produto + ", venda=" + venda + ", quantidade=" + quantidade
+				+ ", valor=" + valor + "]";
 	}
 }

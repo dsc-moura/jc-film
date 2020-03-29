@@ -21,7 +21,8 @@
 					<td id="nm-produto-servico">${produto.nome}</td>
 					<td>
 						<span id="spanProdutoPreco-${produto.id}"><fmt:formatNumber type="currency" value="${produto.preco}" minFractionDigits="2"/></span>
-					</td>														
+					</td>	
+					<td id="valor" style="display: none;">${produto.preco}</td>													
 				</tr>
 			</c:forEach>
 		</tbody>

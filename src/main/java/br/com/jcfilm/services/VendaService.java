@@ -97,7 +97,7 @@ public class VendaService {
 		
 		for(ItemVenda item : carrinho) {
 			if(item.getVenda().getId() == id) {
-				valor = item.getProduto().getPreco();
+				valor = item.getValor();//item.getProduto().getPreco();
 				quantidade = item.getQuantidade();
 				valor = valor * quantidade;
 				total += valor;

@@ -469,6 +469,7 @@ function ListaProdutosCarrinho(lista,id){
 					produto : Produto = {id : parseInt(lista[i].id),} ,
 					venda : Venda = {id: id,},
 					quantidade : 1,
+					valor : parseFloat(lista[i].valor),
 			};
 			carrinho.push(ItemVenda);	
 		}
@@ -484,6 +485,7 @@ function ListaCarrinhoProdutosServicos(){
 		Produto = {
 			id: $('#'+produtos[i].id).find('#id').text().trim(),
 			selecao: $('#'+produtos[i].id).find('#btn-selecao-produtos-servicos').val(),
+			valor: $('#'+produtos[i].id).find('#valor').text(),
 		};
 		lista.push(Produto);		
 	});

@@ -19,7 +19,7 @@
 		 			<td >
 		 				${item.quantidade}
 		 			</td>		
-		 			<td><fmt:formatNumber  type="currency" value="${item.produto.preco}" minFractionDigits="2"/></td>		 							
+		 			<td><fmt:formatNumber  type="currency" value="${item.valor}" minFractionDigits="2"/></td>		 							
 		 		</tr>
 		 	</c:forEach>
 		 </tbody>
