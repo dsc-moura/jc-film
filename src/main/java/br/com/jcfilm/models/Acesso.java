@@ -18,7 +18,7 @@ public class Acesso {
 	@ManyToOne
 	@JoinColumn(name="id_usuario",nullable=false)
 	private Usuario usuario;
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private String senha;
 	private boolean acesso;
 	

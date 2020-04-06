@@ -52,7 +52,7 @@
                 	<a href="${s:mvcUrl('CQSC#TelaCadastroCliente').build()}">Clientes</a>
                 </li>
                 <li>
-                	<a href="">Funcionarios</a>
+                	<a href="${s:mvcUrl('FQC#TelaCadastroFuncionario').build()}">Funcionários</a>
                 </li>
               </ul>
             </div>

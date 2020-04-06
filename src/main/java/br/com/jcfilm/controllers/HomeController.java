@@ -11,5 +11,5 @@ public class HomeController {
 	public ModelAndView home() {
 		return new ModelAndView("home");		
 	}
-
+	
 }

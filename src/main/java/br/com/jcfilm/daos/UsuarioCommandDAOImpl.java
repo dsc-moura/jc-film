@@ -1,36 +1,60 @@
 package br.com.jcfilm.daos;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Repository;
 
-import br.com.jcfilm.interfaces.IUsuarioQueryService;
+import br.com.jcfilm.interfaces.IUsuarioCommandService;
 import br.com.jcfilm.models.Acesso;
-import br.com.jcfilm.models.Marca;
 import br.com.jcfilm.models.Usuario;
 
 @Repository
 @Scope(proxyMode = ScopedProxyMode.INTERFACES)
-public class UsuarioQueryDAOImpl implements IUsuarioQueryService{
+public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
+
 
 	@PersistenceContext
 	private EntityManager manager;
 	
 	@Override
 	@Transactional
-	public List<Usuario> ListaUsuarios() {
+	public int create(Usuario usuario) {
 		// TODO Auto-generated method stub
 		try {
-			Query query = manager.createQuery("from Usuario");
-			List<Usuario> usuarios = query.getResultList();
-			return usuarios;
+			manager.persist(usuario);
+			return usuario.getId();
+		}catch (Exception e) {
+			// TODO: handle exception
+			return 0;
+		} finally {
+			// TODO: handle finally clause
+			manager.close();
+		}
+		
+	}
+
+	@Override
+	public void update(Usuario usuario) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	@Transactional
+	public void atribuirAcesso(Acesso acesso) {
+		// TODO Auto-generated method stub
+		try {
+			manager.persist(acesso);
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -38,16 +62,9 @@ public class UsuarioQueryDAOImpl implements IUsuarioQueryService{
 	}
 
 	@Override
-	@Transactional
-	public List<Acesso> ListaAcessos() {
-		try {
-			Query query = manager.createQuery("from Acesso");
-			List<Acesso> acessos = query.getResultList();
-			return acessos;
-		} finally {
-			// TODO: handle finally clause
-			manager.close();
-		}
+	public void retirarAcesso(Acesso acesso) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
