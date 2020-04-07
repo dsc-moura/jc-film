@@ -199,7 +199,7 @@
 										<div class="input-group input-group-lg">
 											<input type="text" placeholder="Informe a placa" class="form-control" id="busca-placa-veiculo"/>
 											<div class="input-group-prepend">
-												<button type="button" class="input-group-text"  id="inputGroup-sizing-lg"><i class="fas fa-search"></i></button>
+												<button type="button" class="input-group-text"><i class="fas fa-search"></i></button>
 											</div>
 										</div>					
 									</div>						

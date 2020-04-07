@@ -31,7 +31,7 @@ function salvar(modo,id,vlrLinha){
 	
 	var nome = $('#'+vlrLinha).find('#nome').val().trim();
 	
-	if(modo = 4){
+	if(modo == 4){
 		var marca = $('#id_marca-'+id+' option:selected').val();
 		
 		url = url+"/"+id+"/"+nome+"/"+marca;
@@ -115,18 +115,6 @@ function verificar(modo){
 	        break;
 	    case 4:
 	    	url="update-veiculo"
-	        break;
-	    case 5:
-	    	url="update-marca";
-	        break;
-	    case 6:
-	    	url="update-categoria"
-	        break;
-	    case 7:
-	    	url="update-pagamento"
-	        break;
-	    case 8:
-	    	url="update-motivo-descarte";
 	        break;
 	    default:
 	        alert('ERRO');

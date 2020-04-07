@@ -10,7 +10,7 @@
 						<div class="input-group input-group-lg">
 							<input type="text" class="form-control" id="vcpf" name="cpf"/>
 							<div class="input-group-prepend">
-								<button type="button" class="input-group-text" onclick="buscar();"  id="inputGroup-sizing-lg"><i class="fas fa-search"></i></button>
+								<button type="button" class="input-group-text" onclick="buscar();"><i class="fas fa-search"></i></button>
 							</div>
 						</div>					
 					</div>		
