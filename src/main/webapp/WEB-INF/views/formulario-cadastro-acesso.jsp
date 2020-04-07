@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<form:form id="form-acessos" action="${s:mvcUrl('FCSC#CadastroAcessoFuncionario').build()}" method="POST" commandName="acesso">
+<form:form id="form-acessos" action="${s:mvcUrl('FCSC#UpdateAcessoFuncionario').build()}" method="POST" commandName="acesso">
 	<div class="modal-body">
 		<div class="container-fluid">
 			<div class="card">

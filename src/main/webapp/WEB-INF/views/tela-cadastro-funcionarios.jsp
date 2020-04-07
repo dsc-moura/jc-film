@@ -69,7 +69,7 @@
 						</div>
 						<br>
 						<!-- TABELA COM TODOS OS PRODUTOS  -->
-						<div id="tabelaDeProdutos">		
+						<div id="tabela-funcionarios">		
 							<jsp:include page="tabela-lista-funcionarios.jsp"></jsp:include>	
 						</div>			
 					</div>
@@ -109,11 +109,27 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	      	<div id="update-funcionario" style="display: none;">
-	      		
-	      	</div>
 	      	<div id="cadastro-funcionario">
 	      		<jsp:include page="formulario-cadastro-funcionario.jsp"></jsp:include>
+	      	</div>	      		
+	      </div>	     
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- MODAL NOVO FUNCIONARIO -->
+	<div class="modal fade" id="edit_funcionario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">FUNCIONÁRIO</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+	      	<div id="edit-cad-funcionario">
+	      		<jsp:include page="formulario-edit-cadastro-funcionario.jsp"></jsp:include>
 	      	</div>	      		
 	      </div>	     
 	    </div>

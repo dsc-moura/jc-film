@@ -2,25 +2,25 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<form:form id="Form-cad-usuarios" action="${s:mvcUrl('FCSC#CadastrarFuncionario').build()}" method="POST" commandName="usuario">
+<form:form id="Form-cad-usuarios" action="${s:mvcUrl('FCSC#UpdateCadastroFuncionario').build()}" method="POST" commandName="usuario">
 	<div class="modal-body">
 		<div class="container-fluid">
 			<div class="card">
 				<div class="card-body">
 					<div class="row">			
-						<form:input cssClass="form-control" name="id" path="id" id="id" type="hidden" readonly="true"/>		
-						<form:input cssClass="form-control" value="true" name="ativo" path="ativo" id="ativo" type="hidden" readonly="true"/>								
+						<form:input cssClass="form-control" name="id" path="id" id="edit_id" type="hidden" readonly="true"/>		
+						<form:input cssClass="form-control" name="id" path="ativo" id="edit_ativo" type="hidden" readonly="true"/>								
 						<div class="col-md-4">
 							<h5>Nome:</h5>
 							<div class="input-group input-group-lg">
-								<form:input type="text" cssClass="form-control" id="nome" name="nome" path="nome"/>
+								<form:input type="text" cssClass="form-control" id="edit_nome" name="nome" path="nome"/>
 							</div>					
 						</div>	
 						
 						<div class="col-md-8">
 							<h5>Sobrenome:</h5>
 							<div class="input-group input-group-lg">
-								<form:input type="text" cssClass="form-control" id="sobrenome" name="sobrenome" path="sobrenome"/>
+								<form:input type="text" cssClass="form-control" id="edit_sobrenome" name="sobrenome" path="sobrenome"/>
 							</div>					
 						</div>				
 						<div class="col-md-12">
@@ -30,7 +30,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="inputGroup-sizing-lg"><i class="fas fa-at"></i></span>
 								</div>
-								<form:input type="text" cssClass="form-control" id="email" name="email" path="email"/>
+								<form:input type="text" cssClass="form-control" id="edit_email" name="email" path="email"/>
 							</div>					
 						</div>		
 					</div>								

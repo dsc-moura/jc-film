@@ -19,14 +19,16 @@ public class Usuario {
 	private String sobrenome;
 	@Column(length=30)
 	private String email;
+	private boolean ativo;
 	
 	public Usuario() {}
 	
-	public Usuario(int id, String nome, String sobrenome, String email) {
+	public Usuario(int id, String nome, String sobrenome, String email,boolean ativo) {
 		this.id = id;
 		this.nome = nome;
 		this.sobrenome = sobrenome;
 		this.email = email;
+		this.ativo = ativo;
 	}
 	
 	public int getId() {
@@ -54,9 +56,18 @@ public class Usuario {
 		this.email = email;
 	}
 	
+	public boolean isAtivo() {
+		return ativo;
+	}
+
+	public void setAtivo(boolean ativo) {
+		this.ativo = ativo;
+	}
+
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", email=" + email + "]";
+		return "Usuario [id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + ", email=" + email + ", ativo="
+				+ ativo + "]";
 	}
 	
 }
