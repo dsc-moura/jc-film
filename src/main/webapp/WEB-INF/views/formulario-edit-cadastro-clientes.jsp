@@ -93,8 +93,8 @@
 					</div>
 					<div class="botao">
 					<br>
-					<button type="submit" id="update-cliente-cancelar" onclick="cancelar('profile-tab')" class="btn btn-danger btn-lg"><i class="fas fa-times"></i> CANCELAR</button>				
-					<button type="submit" id="update-cliente-salvar" class="btn btn-success btn-lg"><i class="far fa-save"></i> SALVAR</button>				
+					<button type="submit" id="update-cliente-cancelar" onclick="cancelar('profile-tab')" class="btn btn-danger"><i class="fas fa-times"></i> Cancelar</button>				
+					<button type="submit" id="update-cliente-salvar" class="btn btn-success"><i class="far fa-save"></i> Salvar</button>				
 				</div>		
 				</div>				  
 									

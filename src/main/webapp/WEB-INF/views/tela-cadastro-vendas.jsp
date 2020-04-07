@@ -400,13 +400,9 @@
 			   <!-- Modal Header -->
 			    <!-- Modal body -->
 			   <div class="modal-body">			   
-				   <div class="container-fluid"> 
-				   		<div style="text-align: right;">
-				   			<button type="button" class="btn btn-outline-danger btn-lg" onclick="PrintGarantiaCliente();" ><i class="far fa-file-pdf"> </i> </button>
-				   		</div>
-				   		<br>				   		
-					  <div class="card" id="garantia-servico-cliente">
-					   		<div class="card-body">
+				   <div class="container-fluid"> 				   				   		
+					  <div class="card" id="garantia-servico-cliente">					 
+					   		<div class="card-body">					   		
 							   	<div class="card">
 							   		<div class="card-body">
 							   				 <div class="row">
@@ -510,7 +506,11 @@
 							   		</div>						   
 							   </div>	
 				    		</div> 
-						</div>   
+						</div> 
+						<br>
+						<div style="text-align: right;">
+				   			<button type="button" class="btn btn-outline-danger btn-lg" onclick="PrintGarantiaCliente();" ><i class="far fa-file-pdf"> </i> </button>
+				   		</div>
 					</div>
 				</div>           
 		    </div>

@@ -93,7 +93,7 @@
 							  
 				<div class="botao">
 					<br>
-					<button type="submit" id="salvar" class="btn btn-success btn-lg"><i class="far fa-save"></i> SALVAR</button>				
+					<button type="submit" id="salvar" class="btn btn-success"><i class="far fa-save"></i> Salvar</button>				
 				</div>						
 			</div>		
 		</div>	
