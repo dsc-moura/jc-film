@@ -7,6 +7,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
+<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
+
 <title>Cadastros</title>
 
 	<s:url value="/resources/css" var="cssPath"/>

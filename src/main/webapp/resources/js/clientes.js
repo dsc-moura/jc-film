@@ -1,4 +1,12 @@
 
+$(function () {
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    $(document).ajaxSend(function(e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
+});
+
 function cancelarDelete(vlrLinha){
 	$('#'+vlrLinha).find('#update,#visualizar,#delete').show();
 	$('#'+vlrLinha).find('#confirmar,#cancelar').hide();

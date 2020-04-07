@@ -2,6 +2,14 @@
  * 
  */
 
+$(function () {
+    var token = $("meta[name='_csrf']").attr("content");
+    var header = $("meta[name='_csrf_header']").attr("content");
+    $(document).ajaxSend(function(e, xhr, options) {
+        xhr.setRequestHeader(header, token);
+    });
+});
+
 var linhaEdit = null;
 function update(id,vlrLinha){
 	if(linhaEdit == null || linhaEdit == vlrLinha){

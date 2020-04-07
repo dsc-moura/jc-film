@@ -5,6 +5,9 @@
 <head>
 <meta charset="utf-8">
 
+<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
+
 	<s:url value="/resources/css" var="cssPath"/>
 	<s:url value="/resources/js" var="jsPath"/>
 	<link rel="stylesheet" href="${cssPath}/bootstrap.min.css">

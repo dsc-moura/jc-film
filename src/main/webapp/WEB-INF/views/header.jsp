@@ -1,5 +1,5 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
-
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="security" %>
 
   <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
     <i class="fas fa-bars"></i>
@@ -18,8 +18,8 @@
             alt="User picture">
         </div>
         <div class="user-info">
-          <span class="user-name">Daniel
-            <strong>Moura</strong>
+          <span class="user-name">
+          	<security:authentication property="principal" var="usuario"/> ${usuario.username}           
           </span>
           <span class="user-role">Administrador</span>
           <span class="user-status">
@@ -33,7 +33,7 @@
       <div class="sidebar-menu">
         <ul>
           <li class="header-menu">
-            <span>Configurações</span>
+            <span>Menu</span>
           </li>
           <li class="sidebar-dropdown">
             <a href="#">
@@ -61,38 +61,12 @@
             <a href="#">
               <i class="fa fa-shopping-cart"></i>
               <span>Vendas</span>
-              <span class="badge badge-pill badge-danger">3</span>
             </a>
             <div class="sidebar-submenu">
               <ul>
                 <li>
                      <a href="${s:mvcUrl('VQC#TelaCadastroVendas').build()}">Vendas | Orçamentos & Garantias</a>
                 </li>                
-              </ul>
-            </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fas fa-cogs"></i>
-              <span>Parametrização</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-               
-                </li>
-                <li>
-                  <a href="#">Panels</a>
-                </li>
-                <li>
-                  <a href="#">Tables</a>
-                </li>
-                <li>
-                  <a href="#">Icons</a>
-                </li>
-                <li>
-                  <a href="#">Forms</a>
-                </li>
               </ul>
             </div>
           </li>
@@ -109,47 +83,7 @@
               </ul>
             </div>
           </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fa fa-globe"></i>
-              <span>Acessos</span>
-            </a>
-             <div class="sidebar-submenu">
-              <ul>
-              	<li>
-              
-                </li>                
-                <li>
-             
-                </li>
-                <li>
-               
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="header-menu">
-            <span>Extra</span>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-book"></i>
-              <span>Documentation</span>
-              <span class="badge badge-pill badge-primary">Beta</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-calendar"></i>
-              <span>Calendar</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa fa-folder"></i>
-              <span>Examples</span>
-            </a>
-          </li>
+          
         </ul>
       </div>
       <!-- sidebar-menu  -->
@@ -168,7 +102,7 @@
         <i class="fa fa-cog"></i>
         <span class="badge-sonar"></span>
       </a>
-      <a href="#">
+      <a href="${s:mvcUrl('LCSC#logout').build()}">
         <i class="fa fa-power-off"></i>
       </a>
     </div>
