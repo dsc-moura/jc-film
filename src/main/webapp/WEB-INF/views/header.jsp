@@ -49,11 +49,11 @@
               		<a href="${s:mvcUrl('PQC#TelaCadastroProduto').build()}">Produtos & Serviços</a>
                 </li>
                 <li>
-                	<a href="${s:mvcUrl('CQSC#TelaCadastroCliente').build()}">Clientes</a>
-                </li>
-                <li>
                 	<a href="${s:mvcUrl('FQC#TelaCadastroFuncionario').build()}">Funcionários</a>
                 </li>
+                <li>
+                	<a href="${s:mvcUrl('CQSC#TelaCadastroCliente').build()}">Clientes</a>
+                </li>                
               </ul>
             </div>
           </li>
@@ -67,13 +67,7 @@
               <ul>
                 <li>
                      <a href="${s:mvcUrl('VQC#TelaCadastroVendas').build()}">Vendas | Orçamentos & Garantias</a>
-                </li>
-                <li>
-                  <a href="#">Orders</a>
-                </li>
-                <li>
-                  <a href="#">Credit cart</a>
-                </li>
+                </li>                
               </ul>
             </div>
           </li>
