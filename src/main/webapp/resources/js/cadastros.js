@@ -76,7 +76,7 @@ function salvar(modo,id,vlrLinha){
 		
 		}); 
 		
-		
+		$('#'+vlrLinha).find('#spn-nome').html(nome);
 		$('#'+vlrLinha).find('#id_marca').html($('#id_marca-'+id+' option:selected').text());
 		$('#'+vlrLinha).find('#id_veiculo').html(nome);
     	$('#'+vlrLinha).find('.form-control').hide();

@@ -27,6 +27,20 @@ function cancelar(tab){
 	$('#'+tab).tab('show');	   
 }
 
+function veiculos(id){
+	$.ajax({
+	    type:  'GET',
+	    url:   'buscar-veiculos',
+	    data: {	    
+	    	id: id,
+	    },
+	    dataType: 'html',	    
+	    success: function(data){
+	    	$('#carros-cliente').html(data);    
+	     }		    
+	}); 
+}
+
 
 function EditarVisualizar(id,tab,view){
 	$.ajax({

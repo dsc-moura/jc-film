@@ -21,6 +21,9 @@
 		 			<td>${cliente.sobrenome}</td>
 		 			<td id="acoes-tabela">					
 						<button type="button" class="btn btn-primary" id="visualizar" onclick="EditarVisualizar('${cliente.id}','profile-tab',true);" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="far fa-eye"></i></button>
+						<button type="button" id="visualizar-cars" class="btn btn-success" onclick="veiculos(${cliente.id})" data-toggle="modal" data-target="#veiculoscliente">
+							<i class="fas fa-car"></i>			
+						</button>	
 						<button type="button" class="btn btn-warning" id="update" onclick="EditarVisualizar('${cliente.id}','profile-tab',false);" data-toggle="tooltip" data-placement="top" title="Editar"><i class="fas fa-user-edit"></i></button>
 						<button type="button" id="delete" class="btn btn-danger" onclick="excluir(${cliente.id},'cliente-${cliente.id}')"><i class="fas fa-trash-alt"></i></button>
 						<button type="button" class="btn btn-success" id="confirmar" onclick="confirmar(${cliente.id},'cliente-${cliente.id}');" style="display: none;" data-toggle="tooltip" data-placement="top" title="Confirmar"><i class="fas fa-check"></i></button>			        	

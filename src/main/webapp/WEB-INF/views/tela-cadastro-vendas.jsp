@@ -52,7 +52,7 @@
 			text-align: center;
 		}
 		
-			body{
+		body{
 			background-color: #EE6363;			
 		}
 		

@@ -23,8 +23,6 @@ import br.com.jcfilm.models.ClienteVeiculo;
 @EnableTransactionManagement
 public class ClienteQueryServiceController {
 	
-	@Autowired
-	private IVeiculoQueryService IVeiculo;
 	
 	@Autowired
 	private IClienteQueryService ICliente;
@@ -32,7 +30,6 @@ public class ClienteQueryServiceController {
 	@RequestMapping("/TelaCadastroCliente")
 	public ModelAndView TelaCadastroCliente(Cliente cliente) {
 		ModelAndView model = new  ModelAndView("/tela-cadastro-clientes");
-		model.addObject("veiculos", IVeiculo.ListaVeiculos());
 		model.addObject("clientes", ICliente.ListaClientes());
 		return model;
 	}
@@ -60,6 +57,13 @@ public class ClienteQueryServiceController {
 	public List<ClienteVeiculo> BuscarDetalheVeiculoCliente(@PathVariable("id") int id) {
 		return ICliente.BuscaDetalheVeiculoCliente(id);
 	}
+	
+	@RequestMapping("/buscar-veiculos")	
+	public String BuscarVeiculos(@RequestParam(value="id") int id, HttpServletRequest request) {
+		request.setAttribute("veiculos",ICliente.ListaVeiculosCliente(id));		
+		return "/tabela-lista-carros";
+	}
+	
 	
 	
 }

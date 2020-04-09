@@ -10,13 +10,15 @@ $(function () {
 $('#preco').maskMoney({
 	  allowNegative: true,
 	  decimal: '.',
-	  thousands: '.'
+	  thousands: '.',
+	  affixesStay: false
 });	
 
 $('#edit_preco').maskMoney({
 	  allowNegative: true,
 	  decimal: '.',
-	  thousands: '.'
+	  thousands: '.',
+	  affixesStay: false
 });	
 
 function cadastro(){

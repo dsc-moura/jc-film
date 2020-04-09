@@ -12,7 +12,7 @@
 				<tr class="marca" id="marca-${marca.id}">	
 					<td id="id" style="display: none;">${marca.id}</td>			
 					<td>
-						<span>${marca.nome}</span>
+						<span id="spn-nome">${marca.nome}</span>
 						<input type="text" class="form-control" id='nome' style="display: none">		
 					</td>
 					<td id="acoes">

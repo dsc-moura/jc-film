@@ -83,6 +83,26 @@
 		</main>
 	</div>
 	
+			
+	<!-- MODAL VEICULOS CLIENTE -->
+	<div class="modal fade" id="veiculoscliente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">VEÍCULOS</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body">
+		      <div id="carros-cliente">
+		      	<jsp:include page="tabela-lista-carros.jsp"></jsp:include>      	
+		      </div>	      	
+	      </div>	     
+	    </div>
+	  </div>
+	</div>
+	
 	<script type="text/javascript" src="${jsPath}/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="${jsPath}/bootstrap.min.js"></script>
 	<script type="text/javascript" src="${jsPath}/bootstrapGrowl.js"></script>
