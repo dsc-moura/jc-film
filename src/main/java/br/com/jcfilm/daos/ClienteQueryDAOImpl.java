@@ -26,10 +26,18 @@ public class ClienteQueryDAOImpl  implements IClienteQueryService{
 	@Transactional
 	public List<Cliente> BuscaCliente(String cpf) {
 		// TODO Auto-generated method stub
-		Query query = manager.createQuery("from Cliente where cpf = :cpf")
-				.setParameter("cpf", cpf);	
-		List<Cliente> clientes = query.getResultList();
-		return clientes;
+		try {
+			Query query = manager.createQuery("from Cliente where cpf = :cpf")
+					.setParameter("cpf", cpf);	
+			List<Cliente> clientes = query.getResultList();
+			return clientes;
+		} catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
+		}finally {
+			// TODO: handle finally clause
+		}
+		
 	}
 
 	@Override
@@ -40,6 +48,9 @@ public class ClienteQueryDAOImpl  implements IClienteQueryService{
 			Query query = manager.createQuery("from Cliente");
 			List<Cliente> clientes = query.getResultList();
 			return clientes;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -55,6 +66,9 @@ public class ClienteQueryDAOImpl  implements IClienteQueryService{
 					.setParameter("id", id);	
 			List<Cliente> clientes = query.getResultList();
 			return clientes;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -70,7 +84,10 @@ public class ClienteQueryDAOImpl  implements IClienteQueryService{
 					.setParameter("id", id);	
 			List<ClienteVeiculo> clientes = query.getResultList();
 			return clientes;
-		} finally {
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
+		}  finally {
 			// TODO: handle finally clause
 			manager.close();
 		}		
@@ -85,6 +102,9 @@ public class ClienteQueryDAOImpl  implements IClienteQueryService{
 					.setParameter("id", id);	
 			List<ClienteVeiculo> clientes = query.getResultList();
 			return clientes;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		} finally {
 			// TODO: handle finally clause
 			manager.close();

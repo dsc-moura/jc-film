@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
+/*
 @Entity
 @Table(name="jcf_tbl_cad_empresa")
 public class Empresa {
@@ -95,3 +95,4 @@ public class Empresa {
 	
 	
 } 
+*/

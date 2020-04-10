@@ -69,21 +69,7 @@
                 </li>                
               </ul>
             </div>
-          </li>
-          <li class="sidebar-dropdown">
-            <a href="#">
-              <i class="fas fa-clipboard-list"></i>
-              <span>Consultas</span>
-            </a>
-            <div class="sidebar-submenu">
-              <ul>
-                <li>
-              
-                </li>               
-              </ul>
-            </div>
-          </li>
-          
+          </li>          
         </ul>
       </div>
       <!-- sidebar-menu  -->

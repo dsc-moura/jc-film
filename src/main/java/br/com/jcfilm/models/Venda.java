@@ -1,11 +1,11 @@
 package br.com.jcfilm.models;
 
 import java.util.Calendar;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,31 +14,33 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name="jcf_tbl_cad_vendas")
+@Table(name="jcl_tbl_cad_vendas")
 public class Venda {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne
-	@JoinColumn(name="id_usuario",nullable=false)
+	@JoinColumn(name="usuario_id",nullable=false)
 	private Usuario usuario;
 	@ManyToOne
-	@JoinColumn(name="id_cliente",nullable=false)
+	@JoinColumn(name="cliente_id",nullable=false)
 	private Cliente cliente;	
 	private boolean orcamento;
 	private boolean servico;
 	private boolean situacao;
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name="data",nullable=true,columnDefinition="TIMESTAMP default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP")
+	@Column(name="data",nullable=false)
 	private Calendar data;
 	@Column(nullable=true)
 	private int prazo;
 	@Column(nullable=true)
 	private int tempo;
 	@ManyToOne
-	@JoinColumn(name="id_veiculo",nullable=false)
+	@JoinColumn(name="veiculo_id",nullable=false)
 	private ClienteVeiculo veiculo;
 	@Transient
 	private String descPrazo;

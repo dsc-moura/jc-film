@@ -25,6 +25,9 @@ public class ClienteCommandDAOImpl implements IClienteCommandService{
 		// TODO Auto-generated method stub
 		try {
 			manager.persist(cliente);
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		}finally{
 			manager.close();
 		}		
@@ -37,6 +40,9 @@ public class ClienteCommandDAOImpl implements IClienteCommandService{
 		// TODO Auto-generated method stub
 		try {
 			manager.persist(veiculo);
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		}finally{
 			manager.close();
 		}			
@@ -71,6 +77,9 @@ public class ClienteCommandDAOImpl implements IClienteCommandService{
 			.setParameter("telefone", cliente.getTelefone())
 			.setParameter("id", cliente.getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		}finally {
 			manager.close();
 		}
@@ -85,6 +94,9 @@ public class ClienteCommandDAOImpl implements IClienteCommandService{
 					+ " where id = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);	
 		}finally {
 			manager.close();
 		}		

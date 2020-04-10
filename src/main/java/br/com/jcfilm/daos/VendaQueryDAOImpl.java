@@ -27,10 +27,13 @@ public class VendaQueryDAOImpl implements IVendaQueryService{
 	public List<ItemVenda> ListaProdutosServicosVenda(int id) {
 		// TODO Auto-generated method stub
 		try {
-			Query query = manager.createQuery("from ItemVenda where id_venda = :id")
+			Query query = manager.createQuery("from ItemVenda where venda.id = :id")
 					.setParameter("id", id);
 			List<ItemVenda> itens = query.getResultList();
 			return itens;	
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}		
@@ -41,14 +44,17 @@ public class VendaQueryDAOImpl implements IVendaQueryService{
 	public int BuscaIdVendaCliente(int id) {
 		// TODO Auto-generated method stub
 		try {
-			Query query = manager.createQuery("Select v.id from Venda v where v.cliente.id = :id and v.servico = 1 and v.situacao = 0")
-					.setParameter("id", id);
-				return (int) query.getResultList().get(0);
+			Query query = manager.createQuery("from Venda where cliente.id = :id and servico = :servico and situacao = :situacao")
+				.setParameter("id", id)
+				.setParameter("servico", true)
+				.setParameter("situacao", false);
+			List<Venda> vendas = query.getResultList();
+			
+			return vendas.get(0).getId();
 				
 		}catch (Exception e) {
-					// TODO: handle exception
-			return 0;
-			} finally {
+			 throw new RuntimeException(e);			
+		} finally {
 			// TODO: handle finally clause
 			manager.close();
 		}
@@ -63,6 +69,9 @@ public class VendaQueryDAOImpl implements IVendaQueryService{
 					.setParameter("id", id);
 			List<Venda> itens = query.getResultList();
 			return itens;	
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}		
@@ -73,9 +82,12 @@ public class VendaQueryDAOImpl implements IVendaQueryService{
 	public List<Venda> Vendas() {
 		// TODO Auto-generated method stub
 		try {
-			Query query = manager.createQuery("from Venda order by id desc");
+			Query query = manager.createQuery("from Venda");
 			List<Venda> vendas = query.getResultList();
 			return vendas;	
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}		
@@ -89,6 +101,9 @@ public class VendaQueryDAOImpl implements IVendaQueryService{
 			Query query = manager.createQuery("from ItemVenda");
 			List<ItemVenda> itens = query.getResultList();
 			return itens;	
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}		

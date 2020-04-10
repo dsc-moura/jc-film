@@ -25,6 +25,9 @@ public class ProdutoCommandDAOImpl implements IProdutoCommandService {
 		try {
 			manager.persist(produto);
 			//return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}		
@@ -45,6 +48,9 @@ public class ProdutoCommandDAOImpl implements IProdutoCommandService {
 			.setParameter("nome", produto.getNome())
 			.setParameter("id", produto.getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally {
 			manager.close();
 		}		
@@ -58,6 +64,9 @@ public class ProdutoCommandDAOImpl implements IProdutoCommandService {
 			manager.createQuery("delete from Produto where id = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally {
 			manager.close();
 		}		

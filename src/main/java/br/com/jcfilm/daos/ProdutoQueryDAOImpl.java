@@ -29,6 +29,9 @@ public class ProdutoQueryDAOImpl implements IProdutoQueryService{
 			Query query = manager.createQuery("from Produto");
 			List<Produto> produtos = query.getResultList();
 			return produtos;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}

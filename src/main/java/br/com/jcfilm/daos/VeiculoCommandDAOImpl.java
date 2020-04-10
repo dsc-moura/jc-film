@@ -26,6 +26,9 @@ public class VeiculoCommandDAOImpl implements IVeiculoCommandService{
 		try {
 			manager.persist(veiculo);
 			//return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}			
@@ -41,6 +44,9 @@ public class VeiculoCommandDAOImpl implements IVeiculoCommandService{
 			.setParameter("id_marca", veiculo.getMarca().getId())
 			.setParameter("id", veiculo.getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally {
 			manager.close();
 		}
@@ -54,6 +60,9 @@ public class VeiculoCommandDAOImpl implements IVeiculoCommandService{
 			manager.createQuery("delete from Veiculo where id = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally {
 			manager.close();
 		}			

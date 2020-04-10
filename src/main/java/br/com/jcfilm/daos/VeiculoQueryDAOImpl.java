@@ -29,6 +29,9 @@ public class VeiculoQueryDAOImpl implements IVeiculoQueryService{
 			Query query = manager.createQuery("from Veiculo");
 			List<Veiculo> Veiculos = query.getResultList();
 			return Veiculos;	
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}

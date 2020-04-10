@@ -26,6 +26,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 		try {
 			manager.persist(venda);
 			return venda.getId();
+		}catch (Exception e) {
+			// TODO: handle exception
+			 throw new RuntimeException(e);
 		}finally{
 			manager.close();
 		}			
@@ -38,6 +41,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 		try {
 			manager.persist(item);
 			//return true;
+		}catch (Exception e) {
+			// TODO: handle exception
+			 throw new RuntimeException(e);
 		}finally{
 			manager.close();
 		}			
@@ -51,6 +57,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 			manager.createQuery("delete from ItemVenda where id = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -66,6 +75,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 			manager.createQuery("delete from ItemVenda where id_venda = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -81,6 +93,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 			.setParameter("quantidade", quantidade)
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -99,6 +114,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 			.setParameter("tempo", venda.getTempo())
 			.setParameter("id", venda.getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -113,6 +131,9 @@ public class VendaCommandDAOImpl implements IVendaCommnadService{
 			manager.createQuery("delete from Venda where id = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();

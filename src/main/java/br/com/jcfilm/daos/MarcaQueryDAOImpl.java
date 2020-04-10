@@ -29,6 +29,9 @@ public class MarcaQueryDAOImpl implements IMarcaQueryService {
 			Query query = manager.createQuery("from Marca");
 			List<Marca> marcas = query.getResultList();
 			return marcas;
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();

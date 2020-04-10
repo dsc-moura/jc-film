@@ -28,8 +28,7 @@ public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
 			manager.persist(usuario);
 			return usuario.getId();
 		}catch (Exception e) {
-			// TODO: handle exception
-			return 0;
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -49,6 +48,8 @@ public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
 			.setParameter("ativo", usuario.isAtivo())
 			.setParameter("id", usuario.getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -69,6 +70,9 @@ public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
 		// TODO Auto-generated method stub
 		try {
 			manager.persist(acesso);
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -86,6 +90,9 @@ public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
 			.setParameter("senha", acesso.getSenha())
 			.setParameter("id", acesso.getUsuario().getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -102,6 +109,9 @@ public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
 			.setParameter("ativo", status)			
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();
@@ -117,6 +127,9 @@ public class UsuarioCommandDAOImpl implements IUsuarioCommandService{
 			.setParameter("acesso", permissao)					
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		} finally {
 			// TODO: handle finally clause
 			manager.close();

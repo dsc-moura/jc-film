@@ -3,6 +3,7 @@ package br.com.jcfilm.models;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,7 +13,7 @@ import javax.persistence.Table;
 @Table(name="jcf_tbl_cad_clientes_veiculos")
 public class ClienteVeiculo {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne
 	@JoinColumn(name="id_cliente",nullable=false)

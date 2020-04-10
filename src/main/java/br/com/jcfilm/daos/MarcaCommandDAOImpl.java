@@ -24,6 +24,9 @@ public class MarcaCommandDAOImpl implements IMarcaCommandService{
 		// TODO Auto-generated method stub
 		try {
 			manager.persist(marca);
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally{
 			manager.close();
 		}			
@@ -38,6 +41,9 @@ public class MarcaCommandDAOImpl implements IMarcaCommandService{
 			.setParameter("nome", marca.getNome())
 			.setParameter("id", marca.getId())
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally {
 			manager.close();
 		}
@@ -51,6 +57,9 @@ public class MarcaCommandDAOImpl implements IMarcaCommandService{
 			manager.createQuery("delete from Marca where id = :id")
 			.setParameter("id", id)
 			.executeUpdate();
+		}catch (Exception e) {
+			// TODO: handle exception
+			throw new RuntimeException(e);		
 		}finally {
 			manager.close();
 		}			

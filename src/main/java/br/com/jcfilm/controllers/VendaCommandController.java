@@ -1,5 +1,8 @@
 package br.com.jcfilm.controllers;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +31,13 @@ public class VendaCommandController {
 	@RequestMapping("/iniciar-processo-venda")
 	@ResponseBody
 	public int IniciarVenda(@RequestBody Venda venda) {
+	
 		try {
-			return IVenda.InciarProcessoVenda(venda);
+			venda.setData(Calendar.getInstance());
+			 return IVenda.InciarProcessoVenda(venda);
 		} catch (Exception e) {
 			// TODO: handle exception
-			return 0;
-			//System.out.println(e.getMessage());
+			 throw new RuntimeException(e);					
 		}	
 	}
 	
