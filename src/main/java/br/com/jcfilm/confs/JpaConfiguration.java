@@ -42,9 +42,9 @@ public class JpaConfiguration {
         
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.postgresql.Driver");
-        dataSource.setUrl("jdbc:postgresql://ec2-3-91-112-166.compute-1.amazonaws.com:5432/d4p58pkpmpom94?sslmode=require&characterEncoding=UTF-8");
-        dataSource.setUsername("zftcktlyjfznmt");
-        dataSource.setPassword("ad797bd75ddbd88daf6dda65747ae7d3b907d21ea2b36d0292d1fd176c352529");         
+        dataSource.setUrl("jdbc:postgresql://ec2-18-206-84-251.compute-1.amazonaws.com:5432/da8bvpsif50tdn?sslmode=require&characterEncoding=UTF-8");
+        dataSource.setUsername("manwemeamxuadx");
+        dataSource.setPassword("657d0c798127f164c02f6f1da3a0dbafb2cea16fe0b2a8eb93ddc5f1479ebae7");         
         
         factoryBean.setDataSource(dataSource);
 

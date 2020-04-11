@@ -107,9 +107,9 @@ public class UsuarioQueryDAOImpl implements IUsuarioQueryService, UserDetailsSer
 			acesso.setSenha("$2a$10$jdQpiR35ZZVdrFQYUW7q/evtl1Xr6ED3y.pIzukdgzvF0PIBtrmzS");
 			acesso.setAcesso(true);
 			acesso.setUsuario(usuario);
-			*/			
-			//return new UsuarioDetails(acesso.getUsuario().getNome(), acesso.getUsuario().getEmail(), acesso.getSenha(), acesso.isAcesso());
-			
+					
+			return new UsuarioDetails(acesso.getUsuario().getNome(), acesso.getUsuario().getEmail(), acesso.getSenha(), acesso.isAcesso());
+			*/
 			return new UsuarioDetails(acessos.get(0).getUsuario().getNome(), acessos.get(0).getUsuario().getEmail(), acessos.get(0).getSenha(), acessos.get(0).isAcesso());
 	
 		}catch (Exception e) {
